@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista Javascript</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div>
+        <h1>Menu de atividade</h1>
+        <p>Selecione a atividade no menu abaixo.</p>
+      </div>
+      <div>
+        <ul class="enunciado">
+          <button>
+            <li>
+              <a href="#exercicio1" class="btn-red"
+                >Backgroud intertivo button - Exercício 1</a
+              >
+            </li>
+          </button>
+          <button>
+            <li>
+              <a href="#exercicio2" class="btn-green"
+                >Backgroud intertivo mouse - Exercício 2</a
+              >
+            </li>
+          </button>
+          <button>
+            <li>
+              <a href="#exercicio3" class="btn-blue"
+                >Backgroud intertivo select-radio - Exercício 3</a
+              >
+            </li>
+          </button>
+          <button>
+            <li>
+              <a href="#exercicio4" class="btn-yellow"
+                >Paragráfo intertivo - Exercício 4</a
+              >
+            </li>
+          </button>
+          <button>
+            <li>
+              <a href="#exercicio5" class="btn-purple"
+                >Checkbox intertivo - Exercício 5</a
+              >
+            </li>
+          </button>
+          <button>
+            <li>
+              <a href="#exercicio678" class="btn-orange"
+                >Backgroud e font intertivo button - Exercício 6</a
+              >
+            </li>
+          </button>
+          <button>
+            <li>
+              <a href="#exercicio678" class="btn-pink"
+                >Font geral intertivo - Exercício 7</a
+              >
+            </li>
+          </button>
+          <button>
+            <li>
+              <a href="#exercicio678" class="btn-cyan"
+                >Case geral interativo - Exercício 8</a
+              >
+            </li>
+          </button>
+          <button>
+            <li>
+              <a href="login.html" class="btn-lime">Login - Exercício 9</a>
+            </li>
+          </button>
+          <button>
+            <li>
+              <a href="cadastro.html" class="btn-teal"
+                >Cadastro - Exercício 10</a
+              >
+            </li>
+          </button>
+        </ul>
+      </div>
+      <div class="reset">
+        <button onclick="resetBackground()">Reset Background</button>
+      </div>
+    </nav>
+
+    <main class="content">
+      <section>
+        <div id="exercicio1">
+          <h1>1 - Alterar Cor de Fundo com Botões</h1>
+          <button onclick="changeBackgroundColor('red')">Vermelho</button>
+          <button onclick="changeBackgroundColor('green')">Verde</button>
+          <button onclick="changeBackgroundColor('blue')">Azul</button>
+          <button onclick="changeBackgroundColor('yellow')">Amarelo</button>
+        </div>
+        <hr />
+      </section>
+      <section>
+        <div id="exercicio2">
+          <h1>2 - Alterar Cor de Fundo com Links</h1>
+          <a href="#" onmouseover="changeBackgroundColor('red')">Vermelho</a
+          ><br />
+          <a href="#" onmouseover="changeBackgroundColor('green')">Verde</a
+          ><br />
+          <a href="#" onmouseover="changeBackgroundColor('blue')">Azul</a><br />
+          <a href="#" onmouseover="changeBackgroundColor('yellow')">Amarelo</a
+          ><br />
+        </div>
+        <hr />
+      </section>
+      <section>
+        <div id="exercicio3">
+          <h1>3 - Alterar Cor de Fundo com Select</h1>
+          <select onchange="changeBackgroundColor(this.value)">
+            <option value="">Selecione uma cor</option>
+            <option value="red">Vermelho</option>
+            <option value="green">Verde</option>
+            <option value="blue">Azul</option>
+            <option value="yellow">Amarelo</option>
+          </select>
+        </div>
+        <hr />
+      </section>
+      <section>
+        <div id="exercicio4">
+          <h1>4 - Mostrar/Ocultar Parágrafo</h1>
+          <p id="myParagraph">
+            Este é um parágrafo que pode ser mostrado ou ocultado.
+          </p>
+          <button onclick="toggleParagraph()">Mostrar/Ocultar</button>
+        </div>
+        <hr />
+      </section>
+      <section>
+        <div id="exercicio5">
+          <h1>5 - Habilitar Botão com Checkbox</h1>
+          <form>
+            <input type="checkbox" name="item" onclick="checkCheckboxes()" />
+            Item 1<br />
+            <input type="checkbox" name="item" onclick="checkCheckboxes()" />
+            Item 2<br />
+            <input type="checkbox" name="item" onclick="checkCheckboxes()" />
+            Item 3<br />
+            <input type="checkbox" name="item" onclick="checkCheckboxes()" />
+            Item 4<br />
+            <button type="button" id="myButton">Enviar</button>
+          </form>
+        </div>
+        <hr />
+      </section>
+      <section>
+        <div id="exercicio678">
+          <h1>6, 7, 8 - Manipular Texto e Fundo do Parágrafo</h1>
+          <div>
+            <p id="myParagraph2">
+              Este é um parágrafo que terá sua cor e tamanho de fonte alterados.
+            </p>
+            <button onclick="changeTextColor('white')">
+              Cor da Fonte: Branco
+            </button>
+            <button onclick="changeTextColor('black')">
+              Cor da Fonte: Preto
+            </button>
+            <button onclick="changeBackgroundP('white')">Fundo: Branco</button>
+            <button onclick="changeBackgroundP('black')">Fundo: Preto</button>
+            <button onclick="changeFontSize(1)">Aumentar Fonte</button>
+            <button onclick="changeFontSize(-1)">Diminuir Fonte</button>
+            <button onclick="changeCase('upper')">Maiúsculas</button>
+            <button class="corButton" onclick="changeCase('lower')">
+              Minúsculas
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      function changeBackgroundColor(color) {
+        document.body.style.backgroundColor = color;
+      }
+
+      function changeBackgroundColor(color) {
+        document.body.style.backgroundColor = color;
+      }
+
+      function resetBackground() {
+        document.body.style.backgroundColor = '';
+      }
+
+      function changeBackgroundColor(color) {
+        document.body.style.backgroundColor = color;
+      }
+
+      function toggleParagraph() {
+        var para = document.getElementById('myParagraph');
+        if (para.style.display === 'none' || para.style.display === '') {
+          para.style.display = 'block';
+        } else {
+          para.style.display = 'none';
+        }
+      }
+
+      function checkCheckboxes() {
+        var checkboxes = document.querySelectorAll(
+          'input[type="checkbox"]:checked'
+        );
+        var button = document.getElementById('myButton');
+        if (checkboxes.length >= 2) {
+          button.classList.add('enabled');
+          button.disabled = false;
+        } else {
+          button.classList.remove('enabled');
+          button.disabled = true;
+        }
+      }
+
+      function changeTextColor(color) {
+        document.getElementById('myParagraph2').style.color = color;
+      }
+
+      function changeBackgroundP(color) {
+        document.getElementById('myParagraph2').style.backgroundColor = color;
+      }
+
+      function changeFontSize(change) {
+        var para = document.getElementById('myParagraph2');
+        var currentSize = parseInt(window.getComputedStyle(para).fontSize);
+        para.style.fontSize = currentSize + change + 'px';
+      }
+
+      function changeCase(caseType) {
+        var para = document.getElementById('myParagraph2');
+        para.style.textTransform =
+          caseType === 'upper' ? 'uppercase' : 'lowercase';
+      }
+    </script>
+  </body>
+</html>

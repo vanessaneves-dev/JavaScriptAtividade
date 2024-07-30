@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Cadastro de Usuário</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body class="content">
+    <button><a href="index.html"> Home</a></button>
+    <h1>Cadastro de Usuário</h1>
+    <form id="registrationForm">
+      <label for="login">Login:</label>
+      <input type="text" id="login" name="login" required /><br /><br />
+
+      <label for="password">Senha:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+      /><br /><br />
+
+      <label for="confirmPassword">Confirmar Senha:</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        name="confirmPassword"
+        required
+      /><br /><br />
+
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <p id="errorMessage" style="color: red"></p>
+
+    <script>
+      document
+        .getElementById('registrationForm')
+        .addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          var login = document.getElementById('login').value;
+          var password = document.getElementById('password').value;
+          var confirmPassword =
+            document.getElementById('confirmPassword').value;
+          var errorMessage = document.getElementById('errorMessage');
+
+          if (password.length < 6 || password.length > 10) {
+            errorMessage.textContent =
+              'A senha deve ter entre 6 e 10 caracteres.';
+            return;
+          }
+
+          if (password !== confirmPassword) {
+            errorMessage.textContent = 'As senhas não coincidem.';
+            return;
+          }
+
+          if (login && password && confirmPassword) {
+            errorMessage.textContent = '';
+            alert('Usuário cadastrado com sucesso!');
+            // Aqui você pode adicionar o código para enviar o formulário.
+          } else {
+            errorMessage.textContent = 'Todos os campos devem ser preenchidos.';
+          }
+        });
+    </script>
+  </body>
+</html>
